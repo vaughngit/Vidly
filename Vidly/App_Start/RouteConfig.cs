@@ -13,6 +13,17 @@ namespace Vidly
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // attribute routing 
+            routes.MapMvcAttributeRoutes();  // enable attribute routing for mvc 5 and above 
+
+            // Convention routing 
+            routes.MapRoute(
+                "MoviesByReleaseDate",
+                "movies/released/{year}/{month}",
+                new {Controller = "Movies", action = "ByReleaseDate"}, // anonymous objective for default route  
+              //new { year = @"\d{4}", month = @"\d{2}"}  // use regular expression to apply constrants (\d represents a digit, {4} and {2} represents the number of digits. Use the @ sign to escape the regular backslash escape char
+                new { year = @"2015 | 2016", month = @"\d{2}" } // regular expression to constrain the query to two specific years
+                );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
