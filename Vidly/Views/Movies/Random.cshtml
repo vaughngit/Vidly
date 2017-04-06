@@ -13,6 +13,7 @@
 
 
 @{
+    // Render classes dynamically 
     var className = Model.Customers.Count > 5 ? "popular" : null; // c# shortcut says that if customer count is greater than 5 then set  the var classname equal to popular otherwise set it to null
 
     <h2 class="@className">@Model.Movie.Name</h2>
