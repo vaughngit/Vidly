@@ -9,5 +9,11 @@ namespace Vidly.Models
     {
         public int  Id { get; set; }
         public  string Name { get; set; }
+        
+    }
+
+    public class MultiCustomer
+    {
+        public List<Customer> Customers { get; set; }
     }
 }

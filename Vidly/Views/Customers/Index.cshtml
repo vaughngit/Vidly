@@ -1,0 +1,45 @@
+﻿@model Vidly.Models.MultiCustomer
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*
+    This is a multi-line comment syntax
+
+*@
+
+
+
+@{
+    // Render classes dynamically
+    var className = Model.Customers.Count > 1 ? "growing" : null; // set the value of className
+
+    <h2> <b>Customers</b>  </h2>
+}
+
+
+
+@if (Model.Customers.Count == 0)
+{
+    <h2>There are no customers at this time.</h2>
+}
+else
+{
+
+    <table class="table table-bordered table-hover">
+        <thead >   </thead>
+        <tr>
+            <td class="h4">Customer</td>
+        </tr>
+            @foreach (var customer in Model.Customers)
+            {
+                <tr>
+                     <td> @customer.Name </td>
+                </tr>
+            }
+        
+        <tfoot class="@className">We are growing, our current customer count is <b>  @Model.Customers.Count </b></tfoot>
+
+    </table>
+}
