@@ -12,8 +12,4 @@ namespace Vidly.Models
         
     }
 
-    public class MultiCustomer
-    {
-        public List<Customer> Customers { get; set; }
-    }
 }
