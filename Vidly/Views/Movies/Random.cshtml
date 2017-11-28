@@ -6,8 +6,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
 @*
-    This is a multi-line comment syntax     
+    This is how do you create a multi-line comment in razor view      
 
 *@
 
@@ -21,6 +23,7 @@
 
 @if (Model.Customers.Count == 0) // if no one has rented this movie print the text below 
 {
+    // you can either use c# code or html code inside these code blocks
     <text> No one has rented this movie before. </text> // this text blocks renders text without markup around it.
 }
 else

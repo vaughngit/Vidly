@@ -70,7 +70,7 @@ namespace Vidly.Controllers
 
             /*
              Other Action Result Types: 
-                  return Content("Hello World!");                                                 // ContentResult
+                  return Content("Hello World!");                                                 // ContentResult : Returns plain text content
                   return HttpNotFound();                                                         // HttpNotFoundResult returns 404 page not found page
                   return new EmptyResult();                                                     // EmptyResult requires a new declaration since it doesnt have a helper method like the other ActionTypes 
                   return RedirectToAction("Index", "Home", new {page =1, sortby = "name"});    //RedirectToReouteResult - see below
@@ -94,7 +94,6 @@ namespace Vidly.Controllers
          * for more google 'ASP.NET MVC attribute route constraints'                                         
         * Attribute routing is enabled in the RouteConfig.cs file within the App_Start folder, syntax is: routes.MapMvcAttributeRoutes();
         */
-
         [Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12)}")]
         // use regular expression to apply constrants (\\d represents a digit, and {2} represents the number of digits.
         public ActionResult ByReleaseDate(int year, int month)
