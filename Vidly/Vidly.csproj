@@ -226,6 +226,18 @@
     <Compile Include="Migrations\201712050257519_AddMembershipType.Designer.cs">
       <DependentUpon>201712050257519_AddMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712050318135_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201712050318135_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201712050318135_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712050351156_PopulateMembershipTypesData.cs" />
+    <Compile Include="Migrations\201712050351156_PopulateMembershipTypesData.Designer.cs">
+      <DependentUpon>201712050351156_PopulateMembershipTypesData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712050412387_ApplyAnnoationsToCustomerName.cs" />
+    <Compile Include="Migrations\201712050412387_ApplyAnnoationsToCustomerName.Designer.cs">
+      <DependentUpon>201712050412387_ApplyAnnoationsToCustomerName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -326,6 +338,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712050257519_AddMembershipType.resx">
       <DependentUpon>201712050257519_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712050318135_PopulateMembershipTypes.resx">
+      <DependentUpon>201712050318135_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712050351156_PopulateMembershipTypesData.resx">
+      <DependentUpon>201712050351156_PopulateMembershipTypesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712050412387_ApplyAnnoationsToCustomerName.resx">
+      <DependentUpon>201712050412387_ApplyAnnoationsToCustomerName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
