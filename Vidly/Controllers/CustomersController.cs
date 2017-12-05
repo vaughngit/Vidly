@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Services.Protocols;
 using Microsoft.Ajax.Utilities;
 using Vidly.Models;
+using System.Data.Entity;  // needed by Include method in Index action 
 
 namespace Vidly.Controllers
 {
@@ -30,9 +31,14 @@ namespace Vidly.Controllers
         // GET: Customers
         public ViewResult Index()
         {
-           // var customers = GetCustomers();
-            var customers = _context.Customers; // get all customers from the database (executed when view is called/displayed)
-           // var customers = _context.Customers.ToList(); // immediately calls the data from the database
+            // var customers = GetCustomers();
+            // var customers = _context.Customers; // get all customers from the database (executed when view is called/displayed)
+            // var customers = _context.Customers.ToList(); // immediately calls the data from the database
+
+            // Lecture 30 eager loading: loads related tables/objects with called/target table
+            //add using System.Data.Entity for Include method ;
+            // c as in customer goes to membershiptype 
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList(); 
             return View(customers);
         }
 
