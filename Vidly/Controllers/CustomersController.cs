@@ -12,11 +12,27 @@ namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
-        // GET: Customers
-        public ActionResult Index()
+        private ApplicationDbContext _context; //access to the database
+
+        public CustomersController()  // class constructor: shortcut key "ctor"
         {
-            var customers = GetCustomers();
-            
+            _context = new ApplicationDbContext(); // initialize database access object 
+        }
+        // since _context is a disposable object it needs to be disposed via overriding dispose method of the 
+        // base controller class : shortcut: override Dispose
+        protected override void Dispose(bool disposing)
+        {
+            //base.Dispose(disposing);
+            _context.Dispose();
+        }
+
+
+        // GET: Customers
+        public ViewResult Index()
+        {
+           // var customers = GetCustomers();
+            var customers = _context.Customers; // get all customers from the database (executed when view is called/displayed)
+           // var customers = _context.Customers.ToList(); // immediately calls the data from the database
             return View(customers);
         }
 
@@ -28,16 +44,20 @@ namespace Vidly.Controllers
         //The Attribute route does not have to match the proceding method name.
         public ActionResult Details(int id)
         {
-            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            //SingleOrDefault: Returns the only element of a sequence, or a default value if the sequence is empty; this method throws an exception if there is more than one element in the sequence.
+            //  var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id); // customers data is immediately called 
 
             if (customer == null)
+            {
                 return HttpNotFound();
+            }
 
             return View(customer); 
         }
 
 
-
+       /* No longer needed since database incorporation via pcakge manager console cmd migration in section 29
         private IEnumerable<Customer> GetCustomers()
         {
             return new List<Customer>
@@ -47,6 +67,6 @@ namespace Vidly.Controllers
             };
         }
 
-
+    */
     }
 }
