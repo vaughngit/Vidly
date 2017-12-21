@@ -238,6 +238,10 @@
     <Compile Include="Migrations\201712050412387_ApplyAnnoationsToCustomerName.Designer.cs">
       <DependentUpon>201712050412387_ApplyAnnoationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712210457579_AddNameColumnToMembershipTable.cs" />
+    <Compile Include="Migrations\201712210457579_AddNameColumnToMembershipTable.Designer.cs">
+      <DependentUpon>201712210457579_AddNameColumnToMembershipTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -347,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712050412387_ApplyAnnoationsToCustomerName.resx">
       <DependentUpon>201712050412387_ApplyAnnoationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712210457579_AddNameColumnToMembershipTable.resx">
+      <DependentUpon>201712210457579_AddNameColumnToMembershipTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

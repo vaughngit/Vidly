@@ -13,14 +13,17 @@ namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
-        private ApplicationDbContext _context; //access to the database
+        // Create a default constructor to open connection to database: 
+        private ApplicationDbContext _context; //this private declares the DbContext class to interface with the database
 
-        public CustomersController()  // class constructor: shortcut key "ctor"
+        public CustomersController()  // default class constructor shortcut key is ctor
         {
-            _context = new ApplicationDbContext(); // initialize database access object 
+            _context = new ApplicationDbContext(); // initialize the DBContent class to connect to database  
         }
-        // since _context is a disposable object it needs to be disposed via overriding dispose method of the 
-        // base controller class : shortcut: override Dispose
+
+
+        // the ApplicationDbContext object represented by the _context is a disposable object which needs to be 
+        // disposed via overriding dispose method of the base controller class : shortcut: override Dispose: 
         protected override void Dispose(bool disposing)
         {
             //base.Dispose(disposing);
